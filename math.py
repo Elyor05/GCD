@@ -9,6 +9,7 @@ okno.config(bg="#8D918D")
 
 
 def gcd(f, s):
+    answer.config(state=NORMAL)
     maxi = max(f, s)
     mini = min(f, s)
     mul = maxi // mini
@@ -26,6 +27,7 @@ def deli():
     scd.delete(0, END)
     answer.config(state=NORMAL)
     answer.delete(1.0, END)
+    answer.config(state=DISABLED)
 
 
 fst = Entry(okno, width=20, font=("Arial", 18))
@@ -40,7 +42,7 @@ calc.place(x=40, y=100)
 clear = Button(okno, text="Clear", command=deli)
 clear.place(x=120, y=100)
 
-answer = Text(okno, width=40, height=100, font=("Comic Sans MS", 18))
+answer = Text(okno, width=40, height=100, state=DISABLED, font=("Comic Sans MS", 18))
 answer.place(x=200, y=20, width=580, height=340)
 
 okno.mainloop()
