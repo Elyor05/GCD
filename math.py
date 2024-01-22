@@ -18,11 +18,13 @@ def gcd(f, s):
         gcd(mini, ast)
     else:
         answer.insert(END, ("Answer is " + str(mini)))
+        answer.config(state=DISABLED)
 
 
 def deli():
     fst.delete(0, END)
     scd.delete(0, END)
+    answer.config(state=NORMAL)
     answer.delete(1.0, END)
 
 
